@@ -1,0 +1,11 @@
+app-login{
+    max-height:auto;
+    min-height: 100vh;
+/* background-color: aliceblue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    overflow: auto;
+   margin: auto;
+}

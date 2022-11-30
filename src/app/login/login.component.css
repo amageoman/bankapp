@@ -1,0 +1,74 @@
+h1{
+color: snow;
+
+align-self: center;
+text-decoration: none;
+}
+
+button{
+align-self: center;
+color:steelblue;
+font-weight: 600;
+    padding-inline: 30px;
+    padding-block: 10px;
+    border-radius: 20px;
+}
+
+button:hover{
+
+    background-color: steelblue;
+    color: white;
+}
+a{
+    color: snow;
+align-self: center;
+text-decoration: none;
+}
+a:hover{
+    transform: scale(1.2);
+}
+
+i{
+    color: steelblue;
+    padding: 20px;
+    background: white;
+    width: max-content;
+    /* height: max-content; */
+    align-self: center;
+    border-radius: 50%;
+}
+label{
+    color: snow;
+    font-size: larger;
+    text-align: left;
+    margin-block: 10px;
+}
+
+.login{
+
+    margin: auto auto;
+    font-family: 'poppins',sans-serif;
+    max-width: 600px;
+    min-width: 200px;
+    width: 70vw;
+padding-inline: 30px;
+padding-block: 15px;
+    background-color: rgba(0, 0, 0, .8);
+    border: 2px solid snow;
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: left;
+    flex-direction: column;
+}
+
+input{
+    font-size: larger;
+color: steelblue;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid steelblue;
+    margin-block: 10px;
+    padding-left: 5px;
+    padding-bottom: 15px;
+}
