@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body{
 
-    background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2)), url(./assets/bankbg.jpg);
+    background-image:linear-gradient(rgba(2, 3, 45, 0.7),rgba(2,3,45,.7)), url(./assets/bankbg.jpg);
     background-size: cover;
     background-position: center;
     box-sizing: border-box;

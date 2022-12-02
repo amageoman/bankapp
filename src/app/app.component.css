@@ -1,11 +1,12 @@
 app-login{
-    max-height:auto;
-    min-height: 100vh;
+    /* max-height:auto; */
+    /* min-height: auto; */
 /* background-color: aliceblue; */
+height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-   
+   flex-direction: column;
     overflow: auto;
    margin: auto;
 }
