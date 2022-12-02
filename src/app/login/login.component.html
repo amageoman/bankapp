@@ -5,9 +5,9 @@
     <!-- <h1>Welcome</h1> -->
     <br>
     <label for="acid">Account Number</label>
-    <input type="text" name="accno" (change)="acnoChange($event)"  id="acid" [placeholder]="data">
+    <input type="text" name="accno" #acno id="acid" [placeholder]="data">
     <label for="pid">Password</label>
-    <input type="password" name="pid" (change)="pswChange($event)" id="pid" placeholder="Enter password"><br>
-    <button type="submit"  (click) ="login()">LOGIN</button> <br>
+    <input type="password" name="pid" #psw id="pid" placeholder="Enter password"><br>
+    <button type="submit"  (click) ="login(acno,psw)">LOGIN</button> <br>
     <a href="">New User? Register</a>
 </div>
