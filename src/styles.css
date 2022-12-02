@@ -3,8 +3,9 @@ body{
 
     background-image:linear-gradient(rgba(2, 3, 45, 0.7),rgba(2,3,45,.7)), url(./assets/bankbg.jpg);
     background-size: cover;
-    background-position: center;
+    background-attachment: fixed;
     box-sizing: border-box;
+    /* background-repeat: no-repeat; */
     margin: 0;
     padding: 0;
  

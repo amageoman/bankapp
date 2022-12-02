@@ -1,8 +1,10 @@
 h1{
 color: snow;
-
+text-shadow: 2px 2px 5px black;
 align-self: center;
+font-size: 4ch;
 text-decoration: none;
+padding: 20px;
 }
 
 button{

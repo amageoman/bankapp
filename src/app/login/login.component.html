@@ -5,9 +5,9 @@
     <!-- <h1>Welcome</h1> -->
     <br>
     <label for="acid">Account Number</label>
-    <input type="text" name="accno" #acno id="acid" [placeholder]="data">
+    <input type="text" name="accno"  id="acid" [placeholder]="data"    [(ngModel)]="acno"   >
     <label for="pid">Password</label>
-    <input type="password" name="pid" #psw id="pid" placeholder="Enter password"><br>
-    <button type="submit"  (click) ="login(acno,psw)">LOGIN</button> <br>
+    <input type="password" name="pid"  id="pid" placeholder="Enter password"  [(ngModel)]="psw"><br>
+    <button type="submit"  (click) ="login()">LOGIN</button> <br>
     <a href="">New User? Register</a>
 </div>
