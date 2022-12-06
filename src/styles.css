@@ -1,10 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-
+min-height: 100vh;
     background-image:linear-gradient(rgba(2, 3, 45, 0.7),rgba(2,3,45,.7)), url(./assets/bankbg.jpg);
     background-size: cover;
     background-attachment: fixed;
     box-sizing: border-box;
+    display: grid;
+    place-items: center;
     /* background-repeat: no-repeat; */
     margin: 0;
     padding: 0;
