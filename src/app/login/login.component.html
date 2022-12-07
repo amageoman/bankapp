@@ -1,13 +1,15 @@
 <h1>{{aim}}</h1>
 
-<div class="login">
-    <i class="fa-regular fa-user fa-2x"></i>
-    <!-- <h1>Welcome</h1> -->
-    <br>
-    <label for="acid">Account Number</label>
-    <input type="text" name="accno"  id="acid" [placeholder]="data"    [(ngModel)]="acno"   >
-    <label for="pid">Password</label>
-    <input type="password" name="pid"  id="pid" placeholder="Enter password"  [(ngModel)]="psw"><br>
-    <button type="submit"  (click) ="login()">LOGIN</button> <br>
-    <a routerLink="register">New User? Register</a>
-</div>
+<form (ngSubmit)="login()">
+    <div class="login">
+        <i class="fa-regular fa-user fa-2x"></i>
+        <!-- <h1>Welcome</h1> -->
+        <br>
+        <label for="acid">Account Number</label>
+        <input type="text" name="accno"  id="acid" [placeholder]="data"    [(ngModel)]="acno"   >
+        <label for="pid">Password</label>
+        <input type="password" name="pid"  id="pid" placeholder="Enter password"  [(ngModel)]="psw"><br>
+        <button type="submit"  >LOGIN</button> <br>
+        <a routerLink="register">New User? Register</a>
+    </div>
+</form>

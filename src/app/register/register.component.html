@@ -1,13 +1,15 @@
-<div class="register">
-    <i class="fa-regular fa-user fa-2x"></i>
-    <!-- <h1>Welcome</h1> -->
-    <br>
-    <label for="user">Username</label>
-    <input type="text" name="user"  id="user" placeholder="Username"     [(ngModel)]="uname"  >
-    <label for="acid">Account Number</label>
-    <input type="text" name="acid"  id="acid" placeholder="Account Number"    [(ngModel)]="acno"    >
-    <label for="pid">Password</label>
-    <input type="password" name="pid"  id="pid" placeholder="Enter password"   [(ngModel)]="psw"><br>
-    <button type="submit" (click)="register()" >REGISTER</button> <br>
-    
-</div>
+<form (ngSubmit)="register()">
+    <div class="register">
+        <i class="fa-regular fa-user fa-2x"></i>
+        <!-- <h1>Welcome</h1> -->
+        <br>
+        <label for="user">Username</label>
+        <input type="text" name="user"  id="user" placeholder="Username"     [(ngModel)]="uname"  >
+        <label for="acid">Account Number</label>
+        <input type="text" name="acid"  id="acid" placeholder="Account Number"    [(ngModel)]="acno"    >
+        <label for="pid">Password</label>
+        <input type="password" name="pid"  id="pid" placeholder="Enter password"   [(ngModel)]="psw"><br>
+        <button type="submit"  >REGISTER</button> <br>
+        
+    </div>
+</form>

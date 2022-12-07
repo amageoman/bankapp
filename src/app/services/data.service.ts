@@ -15,14 +15,81 @@ export class DataService {
     1003: { acno: 1003, username: "mega", password: 123, balance: 0 }
   }
 
-  register(acno:any, uname:any, psw:any){
-    var userDetails=this.userDetails;
-    if(acno in userDetails){
+  register(acno: any, uname: any, psw: any) {
+    var userDetails = this.userDetails;
+    if (acno in userDetails) {
       return false;
     }
-    else{
-      userDetails[acno]={acno,username:uname,password:psw,balance:0};
+    else {
+      userDetails[acno] = { acno, username: uname, password: psw, balance: 0 };
       return true;
+    }
+  }
+
+
+
+  login(acno: any, psw: any) {
+
+    var userDetails = this.userDetails;
+    if (acno in userDetails) {
+      if (psw == userDetails[acno]["password"]) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    else {
+      return false;
+    }
+  }
+
+
+
+  deposit(acno: any, password: any, amount: any) {
+    var userDetails = this.userDetails;
+    var amnt = parseInt(amount);
+    if (acno in userDetails) {
+      if (password == userDetails[acno]["password"]) {
+
+        userDetails[acno]["balance"] += amnt;
+        return userDetails[acno]["balance"];
+      }
+
+      else {
+
+        return false;
+      }
+    }
+    else {
+      return false;
+    }
+  }
+
+
+
+  withdraw(acno: any, password: any, amount: any) {
+    var userDetails = this.userDetails;
+    var amnt = parseInt(amount);
+    if (acno in userDetails) {
+      if (password == userDetails[acno]["password"]) {
+        if (amnt <= userDetails[acno]['balance']) {
+          userDetails[acno]["balance"] -= amnt;
+          return userDetails[acno]["balance"];
+        }
+        else {
+          alert('insufficient Balance');
+          return false;
+        }
+      }
+
+      else {
+        alert('incorrect password')
+        return false;
+      }
+    }
+    else {
+      alert('incorrect account no')
+      return false;
     }
   }
 }
