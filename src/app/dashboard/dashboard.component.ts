@@ -8,21 +8,25 @@ import { DataService } from '../services/data.service';
 })
 export class DashboardComponent {
 
-  acno ='';
-  psw ='';
-  amnt ='';
+  acnod ='';
+  pswd ='';
+  amntd ='';
 acnow='';
 psww='';
 amntw='';
-  constructor(private ds: DataService) { }
+user='';
+  constructor(private ds: DataService) {
+
+    this.user=this.ds.currentuser;
+   }
 
   deposit() {
-    var acno = this.acno;
-    var psw = this.psw;
-    var amnt = this.amnt;
-    const result = this.ds.deposit(acno, psw, amnt)
-    if (result) {
-      alert(`${amnt} credited to your account and avalialble balance is ${result}`)
+    var acnod = this.acnod;
+    var pswd= this.pswd;
+    var amntd = this.amntd;
+    const resultd = this.ds.deposit(acnod, pswd, amntd)
+    if (resultd) {
+      alert(`${amntd} credited to your account and avalialble balance is ${resultd}`)
     }
     else {
       alert("incorrect username or password")
@@ -31,16 +35,14 @@ amntw='';
 
 
   withdraw() {
-    var acno2 = this.acnow;
-    var psw2= this.psww;
-    var amnt2 = this.amntw;
-    const result2 = this.ds.deposit(acno2, psw2, amnt2)
-    if (result2) {
-      alert(`${amnt2} debited from your account and avalialble balance is ${result2}`)
+    var acnow = this.acnow;
+    var psww= this.psww;
+    var amntw = this.amntw;
+    const resultw = this.ds.withdraw(acnow, psww, amntw)
+    if (resultw) {
+      alert(`${amntw} debited from your account and avalialble balance is ${resultw}`)
     }
-    else {
-      alert("incorrect username or password")
-    }
+   
   }
 
 

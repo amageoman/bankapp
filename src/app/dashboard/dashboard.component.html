@@ -1,28 +1,32 @@
-<div class="dash">
-    <form class="dt" (ngSubmit)="deposit()">
-        <div class="deposit">
-            <h1>DEPOSIT</h1>
-            <label for="acid1">Account Number</label>
-            <input type="text" id="acid1" name="acid1" placeholder="enter account no" [(ngModel)]="acno">
-            <label for="pid1">Password</label>
-            <input type="password" id="pid1" name="pid1" placeholder="enter password" [(ngModel)]="psw">
-            <label for="depamt">Amount</label>
-            <input type="text" placeholder="amount" name="depamt" id="depamt" [(ngModel)]="amnt">
-            <button type="submit">DEPOSIT</button>
-        </div>
-    </form>
-
-    <form class="wd" (ngSubmit)="withdraw()">
-        <div class="withdraw">
-            <H1>WITHDRAWAL</H1>
-            <label for="acid2">Account Number</label>
-            <input type="text" id="acid2" name='acid2' placeholder="enter account no" [(ngModel)]="acnow">
-            <label for="pid2">Password</label>
-            <input type="password" id="pid2" name="pid2" placeholder="enter password" [(ngModel)]="psww">
-            <label for="withamt">Amount</label>
-            <input type="text" placeholder="amount" id="withamt" name="withamt" [(ngModel)]="amntw">
-            <button type="submit">WITHDRAW</button>
-        </div>
-    </form>
-
+<div class="full">
+    <h1>Hi {{user}} , Welcome to abc Bank</h1>
+    <a routerLink='/transaction'>View Transaction History</a>
+    <div class="dash">
+        <form class="dt" (ngSubmit)="deposit()">
+            <div class="deposit">
+                <h3>DEPOSIT</h3>
+                <label for="acid1">Account Number</label>
+                <input type="text" id="acid1" name="acid1" placeholder="enter account no" [(ngModel)]="acnod">
+                <label for="pid1">Password</label>
+                <input type="password" id="pid1" name="pid1" placeholder="enter password" [(ngModel)]="pswd">
+                <label for="depamt">Amount</label>
+                <input type="text" placeholder="amount" name="depamt" id="depamt" [(ngModel)]="amntd">
+                <button type="submit">DEPOSIT</button>
+            </div>
+        </form>
+    
+        <form class="wd" (ngSubmit)="withdraw()">
+            <div class="withdraw">
+                <H3>WITHDRAWAL</H3>
+                <label for="acid2">Account Number</label>
+                <input type="text" id="acid2" name='acid2' placeholder="enter account no" [(ngModel)]="acnow">
+                <label for="pid2">Password</label>
+                <input type="password" id="pid2" name="pid2" placeholder="enter password" [(ngModel)]="psww">
+                <label for="withamt">Amount</label>
+                <input type="text" placeholder="amount" id="withamt" name="withamt" [(ngModel)]="amntw">
+                <button type="submit">WITHDRAW</button>
+            </div>
+        </form>
+    
+    </div>
 </div>

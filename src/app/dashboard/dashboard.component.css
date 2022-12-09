@@ -1,4 +1,22 @@
+.full{
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* height: 100vh; */
+    width: 100vw;
+}
+
+a{
+    text-decoration: none;
+    color: snow;
+    font-size: large;
+  
+    
+  
+    
+}
 .dash{
 
     display: flex;
@@ -31,11 +49,15 @@ padding-block: 20px;
 h1{
     color: snow;
     text-shadow: 2px 2px 5px black;
-    align-self: center;
+    /* align-self: center; */
     font-size: 4ch;
     text-decoration: none;
     padding: 20px;
     text-align: center;
+    }
+    h3{
+        color: snow;
+        text-align: center;
     }
 
 input{
