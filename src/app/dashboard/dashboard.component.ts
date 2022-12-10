@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -8,22 +9,24 @@ import { DataService } from '../services/data.service';
 })
 export class DashboardComponent {
 
-  acnod ='';
-  pswd ='';
-  amntd ='';
-acnow='';
-psww='';
-amntw='';
+//   acnod ='';
+//   pswd ='';
+//   amntd ='';
+// acnow='';
+// psww='';
+// amntw='';
 user='';
-  constructor(private ds: DataService) {
+  constructor(private ds: DataService,private fb:FormBuilder) {
 
     this.user=this.ds.currentuser;
    }
 
+   depositForm=this.fb.group({acnod:[''],pswd:[''],amntd:['']})
+   withdrawForm=this.fb.group({acnow:[''],psww:[''],amntw:['']})
   deposit() {
-    var acnod = this.acnod;
-    var pswd= this.pswd;
-    var amntd = this.amntd;
+    var acnod = this.depositForm.value.acnod;
+    var pswd= this.depositForm.value.pswd;
+    var amntd = this.depositForm.value.amntd;
     const resultd = this.ds.deposit(acnod, pswd, amntd)
     if (resultd) {
       alert(`${amntd} credited to your account and avalialble balance is ${resultd}`)
@@ -35,9 +38,9 @@ user='';
 
 
   withdraw() {
-    var acnow = this.acnow;
-    var psww= this.psww;
-    var amntw = this.amntw;
+    var acnow = this.withdrawForm.value.acnow;
+    var psww= this.withdrawForm.value.psww;
+    var amntw = this.withdrawForm.value.amntw;
     const resultw = this.ds.withdraw(acnow, psww, amntw)
     if (resultw) {
       alert(`${amntw} debited from your account and avalialble balance is ${resultw}`)

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -9,15 +10,16 @@ import { DataService } from '../services/data.service';
 })
 export class RegisterComponent {
 
-  uname='';
-  acno='';
-  psw='';
-  constructor(private ds:DataService,private router:Router){}
+  // uname='';
+  // acno='';
+  // psw='';
+  constructor(private ds:DataService,private router:Router,private fb:FormBuilder){}
 
+  registerForm=this.fb.group({uname:[''],acno:[''],psw:['']})
   register(){
-    var uname=this.uname;
-    var acno=this.acno;
-    var psw=this.psw;
+    var uname=this.registerForm.value.uname;
+    var acno=this.registerForm.value.acno;
+    var psw=this.registerForm.value.psw;
 
     const result=this.ds.register(acno,uname,psw);
     if (result){

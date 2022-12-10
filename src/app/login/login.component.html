@@ -1,14 +1,14 @@
 <h1>{{aim}}</h1>
 
-<form (ngSubmit)="login()">
+<form (ngSubmit)="login()" [formGroup]="loginForm">
     <div class="login">
         <i class="fa-regular fa-user fa-2x"></i>
         <!-- <h1>Welcome</h1> -->
         <br>
         <label for="acid">Account Number</label>
-        <input type="text" name="accno"  id="acid" [placeholder]="data"    [(ngModel)]="acno"   >
+        <input type="text" name="accno"  id="acid" [placeholder]="data"    formControlName="acno"   >
         <label for="pid">Password</label>
-        <input type="password" name="pid"  id="pid" placeholder="Enter password"  [(ngModel)]="psw"><br>
+        <input type="password" name="pid"  id="pid" placeholder="Enter password"  formControlName="psw"><br>
         <button type="submit"  >LOGIN</button> <br>
         <a routerLink="register">New User? Register</a>
     </div>
