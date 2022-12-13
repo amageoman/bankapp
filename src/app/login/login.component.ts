@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -14,24 +14,34 @@ export class LoginComponent {
   data = "Enter account number";
   // acno = "";
   // psw = "";
- 
 
-  constructor(private router:Router,private ds:DataService,private fb:FormBuilder){}
 
-  loginForm=this.fb.group({acno:[''],psw:['']})
+  constructor(private router: Router, private ds: DataService, private fb: FormBuilder) { }
 
-  login(){
-    var acno=this.loginForm.value.acno;
-    var psw=this.loginForm.value.psw;
-    
-    const result=this.ds.login(acno,psw);
-    if(result){
-      alert('login successful')
-      this.router.navigateByUrl('dashboard')
+  loginForm = this.fb.group({
+    acno: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+    psw: ['', [Validators.required, Validators.pattern('[0-9]+')]]
+  })
+
+  login() {
+    var acno = this.loginForm.value.acno;
+    var psw = this.loginForm.value.psw;
+
+    if (this.loginForm.valid) {
+      const result = this.ds.login(acno, psw);
+      if (result) {
+        alert('login successful')
+        this.router.navigateByUrl('dashboard')
+      }
+      else {
+        alert('incorrect username or password')
+      }
+
     }
-    else{
-      alert('incorrect username or password')
-    }
+else{
+  alert('Invalid Form')
+}
+
   }
 
 

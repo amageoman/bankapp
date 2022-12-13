@@ -5,10 +5,17 @@
         <br>
         <label for="user">Username</label>
         <input type="text" name="user" id="user" placeholder="Username" formControlName="uname">
+        
+            <p  *ngIf = "this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched" class="text-danger">Invalid Username</p>
+        
         <label for="acid">Account Number</label>
         <input type="text" name="acid" id="acid" placeholder="Account Number" formControlName="acno">
+        <p  *ngIf = "this.registerForm.get('acno')?.errors && this.registerForm.get('acno')?.touched" class="text-danger">Invalid Account Number</p>
+
         <label for="pid">Password</label>
-        <input type="password" name="pid" id="pid" placeholder="Enter password" formControlName="psw"><br>
+        <input type="password" name="pid" id="pid" placeholder="Enter password" formControlName="psw">
+        <p  *ngIf = "this.registerForm.get('psw')?.errors && this.registerForm.get('psw')?.touched" class="text-danger">Invalid Password</p>
+        <br>
         <button type="submit">REGISTER</button> <br>
 
     </div>

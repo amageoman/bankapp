@@ -7,10 +7,16 @@
                 <h3>DEPOSIT</h3>
                 <label for="acid1">Account Number</label>
                 <input type="text" id="acid1" name="acid1" placeholder="enter account no" formControlName="acnod">
+                <p  *ngIf = "this.depositForm.get('acnod')?.errors && this.depositForm.get('acnod')?.touched" class="text-danger">Invalid Account Number</p>
+
                 <label for="pid1">Password</label>
                 <input type="password" id="pid1" name="pid1" placeholder="enter password" formControlName="pswd">
+                <p  *ngIf = "this.depositForm.get('pswd')?.errors && this.depositForm.get('pswd')?.touched" class="text-danger">Invalid Password</p>
+
                 <label for="depamt">Amount</label>
                 <input type="text" placeholder="amount" name="depamt" id="depamt" formControlName="amntd">
+                
+
                 <button type="submit">DEPOSIT</button>
             </div>
         </form>
@@ -20,8 +26,12 @@
                 <H3>WITHDRAWAL</H3>
                 <label for="acid2">Account Number</label>
                 <input type="text" id="acid2" name='acid2' placeholder="enter account no" formControlName="acnow">
+                <p  *ngIf = "this.withdrawForm.get('acnow')?.errors && this.withdrawForm.get('acnow')?.touched" class="text-danger">Invalid Account Number</p>
+
                 <label for="pid2">Password</label>
                 <input type="password" id="pid2" name="pid2" placeholder="enter password" formControlName="psww">
+                <p  *ngIf = "this.withdrawForm.get('psww')?.errors && this.withdrawForm.get('psww')?.touched" class="text-danger">Invalid Password</p>
+
                 <label for="withamt">Amount</label>
                 <input type="text" placeholder="amount" id="withamt" name="withamt" formControlName="amntw">
                 <button type="submit">WITHDRAW</button>

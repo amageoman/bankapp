@@ -28,6 +28,7 @@ tbody{
     color: steelblue;
 }
 td,th{
+    border: 1px solid black;
     padding-block:15px ;
     padding-inline: 50px;
 }

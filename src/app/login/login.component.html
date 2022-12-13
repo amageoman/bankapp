@@ -7,8 +7,12 @@
         <br>
         <label for="acid">Account Number</label>
         <input type="text" name="accno"  id="acid" [placeholder]="data"    formControlName="acno"   >
+        <p  *ngIf = "this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched" class="text-danger">Invalid Account Number</p>
+
         <label for="pid">Password</label>
-        <input type="password" name="pid"  id="pid" placeholder="Enter password"  formControlName="psw"><br>
+        <input type="password" name="pid"  id="pid" placeholder="Enter password"  formControlName="psw">
+        <p  *ngIf = "this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched" class="text-danger">Invalid Password</p>
+        <br>
         <button type="submit"  >LOGIN</button> <br>
         <a routerLink="register">New User? Register</a>
     </div>
