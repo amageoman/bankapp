@@ -1,8 +1,13 @@
 <div class="full">
     <h1>Hi {{user}} , Welcome to abc Bank</h1>
+    <h3>{{dateandtime | date : 'short'}}</h3><br><br>
     <a routerLink='/transaction'>View Transaction History</a>
-    <div class="dash">
-        <form class="dt" (ngSubmit)="deposit()" [formGroup]="depositForm">
+    <button class="logout" (click)="logout()">LOGOUT</button>
+    <button class="trash" (click)="deleteconfirm()">DELETE <i class="fa-regular fa-trash-can fa-1x"></i></button>
+
+    <app-deleteconfirm  (onCancel)="oncancel()"  [item]="acno"></app-deleteconfirm>
+    <div  class="dash" >
+        <form class="dt" [ngClass]="acno?'style':''" (ngSubmit)="deposit()" [formGroup]="depositForm">
             <div class="deposit">
                 <h3>DEPOSIT</h3>
                 <label for="acid1">Account Number</label>
@@ -21,7 +26,7 @@
             </div>
         </form>
     
-        <form class="wd" (ngSubmit)="withdraw()" [formGroup]="withdrawForm">
+        <form class="wd" [ngClass]="acno?'style':''" (ngSubmit)="withdraw()" [formGroup]="withdrawForm">
             <div class="withdraw">
                 <H3>WITHDRAWAL</H3>
                 <label for="acid2">Account Number</label>

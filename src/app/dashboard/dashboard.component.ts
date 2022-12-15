@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DeleteconfirmComponent } from '../deleteconfirm/deleteconfirm.component';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -15,10 +17,16 @@ export class DashboardComponent {
   // acnow='';
   // psww='';
   // amntw='';
+  acno:any;
+  dateandtime:any;
   user = '';
-  constructor(private ds: DataService, private fb: FormBuilder) {
+  constructor(private ds: DataService, private fb: FormBuilder,private router:Router) {
+
+    this.dateandtime=new Date();
+    
 
     this.user = this.ds.currentuser;
+    
   }
 
   depositForm = this.fb.group({
@@ -32,6 +40,15 @@ export class DashboardComponent {
     psww: ['', [Validators.required, Validators.pattern('[0-9]+')]],
     amntw: ['']
   })
+
+
+  ngOnInit():void{
+    if(!localStorage.getItem('currentacno')){
+      alert('please login first')
+      this.router.navigateByUrl('')
+    }
+  };
+
   deposit() {
     var acnod = this.depositForm.value.acnod;
     var pswd = this.depositForm.value.pswd;
@@ -70,5 +87,24 @@ export class DashboardComponent {
     }
 
   }
+
+
+  logout(){
+
+    localStorage.removeItem('currentuser')
+    localStorage.removeItem('currentacno')
+    this.router.navigateByUrl('')
+
+  }
+
+deleteconfirm(){
+this.acno=JSON.parse(localStorage.getItem('currentacno') || '')
+}
+
+oncancel(){
+  this.acno='';
+}
+
+
 
 }

@@ -1,0 +1,30 @@
+div{
+    text-align: center;
+    margin-top: 50px;
+    background:linear-gradient(rgba(70, 131, 180, 0.352),rgba(70, 131, 180, 0.352));
+    padding: 20px;
+    border: 2px solid snow;
+    border-radius: 30px;
+}
+
+h4{
+    color: snow;
+}
+
+button{
+    align-self: center;
+    color:steelblue;
+    font-weight: 600;
+    border: none;
+    /* width:150px; */
+        padding-inline: 30px;
+        padding-block: 10px;
+        margin-inline: 10px;
+        border-radius: 20px;
+    }
+    
+    button:hover,button:focus{
+    
+        background-color: steelblue;
+        color: white;
+    }
